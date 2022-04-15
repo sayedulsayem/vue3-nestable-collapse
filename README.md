@@ -3,7 +3,6 @@
 Drag & drop hierarchical list made as a vue component.
 
 [![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
 
 [npm-image]: https://img.shields.io/npm/v/vue3-nestable.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/vue3-nestable
@@ -25,7 +24,6 @@ Drag & drop hierarchical list made as a vue component.
 
 
 ## Table of contents
-  * [Demo](#Demo)
   * [Installation](#installation)
   * [Usage](#usage)
   * [Example](#example)
@@ -43,15 +41,6 @@ Install the plugin:
 ```sh
 npm install --save vue3-nestable
 yarn add vue3-nestable
-```
-
-Use the plugin in your app:
-
-```js
-import Vue from 'vue'
-import VueNestable from 'vue3-nestable'
-
-Vue.use(VueNestable)
 ```
 
 You can also import the components on-demand, if you wish to do so:
@@ -142,9 +131,7 @@ characters that are invalid in a css class name.
 ## Styling
 
 By default, vue3-nestable comes without any styling. Which means you can
-customize the appearance completely to your needs. However, if you want you can
-take a look at the style used in the demo:
-[example/assets/vue-nestable.css](example/assets/vue-nestable.css)
+customize the appearance completely to your needs.
 
 
 ## Props
@@ -167,8 +154,7 @@ The following props can be passed to the `<VueNestable>` Component:
 ## Slots
 
 The `<VueNestable>` Component has two slots that can be used to render items and
-a placeholder. See [Example](example/components/NoItems.vue) for an example on
-how to use them.
+a placeholder.
 
 | Slot Name   | Props                      | Description                                                                                                   |
 | :---------- | :------------------------- | :------------------------------------------------------------------------------------------------------------ |
@@ -201,9 +187,6 @@ with the hook name and a function that will be called when the hook fires.
   'beforeMove': this.myHookFunction
 }
 ```
-
-Look [here](example/components/Advanced.vue) of an example on how to prevent one
-item from being moved.
 
 
 | Hook Name     | Parameters                       | Description                                                                                  |
