@@ -1,19 +1,15 @@
-# vue-nestable
+# vue3-nestable
 
 Drag & drop hierarchical list made as a vue component.
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
 
-[npm-image]: https://img.shields.io/npm/v/vue-nestable.svg?style=flat-square
-[npm-url]: https://www.npmjs.com/package/vue-nestable
+[npm-image]: https://img.shields.io/npm/v/vue3-nestable.svg?style=flat-square
+[npm-url]: https://www.npmjs.com/package/vue3-nestable
 
-[travis-image]: https://img.shields.io/travis/rhwilr/vue-nestable/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/rhwilr/vue-nestable
-
-
-> This package is currently only compatible with Vue 2. Vue 3 compatibility
-> may be added in the future, though there are currently no plans for it.
+## Vue 3 support 🥳
+> This package is currently compatible with Vue 3
 
 
 <hr />
@@ -40,31 +36,27 @@ Drag & drop hierarchical list made as a vue component.
   * [Hooks](#hooks)
 
 
-## Demo
-
-[Live Demo](https://rhwilr.github.io/vue-nestable/)
-
-
 ## Installation
 
 Install the plugin:
 
 ```sh
-npm install --save vue-nestable
+npm install --save vue3-nestable
+yarn add vue3-nestable
 ```
 
 Use the plugin in your app:
 
 ```js
 import Vue from 'vue'
-import VueNestable from 'vue-nestable'
+import VueNestable from 'vue3-nestable'
 
 Vue.use(VueNestable)
 ```
 
 You can also import the components on-demand, if you wish to do so:
 ```js
-import { VueNestable, VueNestableHandle } from 'vue-nestable'
+import { VueNestable, VueNestableHandle } from 'vue3-nestable'
 
 export default {
   components: {
@@ -88,20 +80,30 @@ characters that are invalid in a css class name.
 ```html
 <template>
 
-  <vue-nestable v-model="nestableItems">
-    <vue-nestable-handle
-      slot-scope="{ item }"
-      :item="item">
-      {{ item.text }}
-    </vue-nestable-handle>
+  <vue-nestable :value="nestableItems" @input="nestableItems = $event">
+    <template v-slot="slot">
+      <vue-nestable-handle>
+        {{ slot.item.text }}
+      </vue-nestable-handle>
+    </template>
   </vue-nestable>
 
+  <pre>
+    <code>
+      {{ nestableItems }}
+    </code>
+  </pre>
 </template>
 
-<script type="text/babel">
-export default {
-  data () {
-    return {
+<script>
+  import { VueNestable, VueNestableHandle } from 'vue3-nestable'
+
+  export default {
+    components: {
+      VueNestable,
+      VueNestableHandle,
+    },
+    data: () => ({
       nestableItems: [
         {
           id: 0,
@@ -111,23 +113,35 @@ export default {
           text: 'Harry',
           children: [{
             id: 2,
-            text: 'David'
+            text: 'David 1',
+            children: [{
+              id: 3,
+              text: 'David 2'
+            }, {
+              id: 4,
+              text: 'Lisa'
+            }]
+          }, {
+            id: 5,
+            text: 'Lisa 2'
+          }, {
+            id: 6,
+            text: 'Lisa 3'
           }]
         }, {
-          id: 3,
-          text: 'Lisa'
+          id: 7,
+          text: 'Lisa 4'
         }
       ]
-    }
+    })
   }
-}
 </script>
 ```
 
 
 ## Styling
 
-By default, vue-nestable comes without any styling. Which means you can
+By default, vue3-nestable comes without any styling. Which means you can
 customize the appearance completely to your needs. However, if you want you can
 take a look at the style used in the demo:
 [example/assets/vue-nestable.css](example/assets/vue-nestable.css)
