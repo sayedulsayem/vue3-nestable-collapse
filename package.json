@@ -1,6 +1,6 @@
 {
   "name": "vue3-nestable",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "A simple drag & drop hierarchical list made as a vue component.",
   "author": "Artem Stepanenko <work.stpnnk@gmail.com>",
   "homepage": "https://github.com/stepanenko3/vue3-nestable.git",
