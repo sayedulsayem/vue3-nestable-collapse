@@ -16,7 +16,7 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/main.js'),
       name: 'VueNestable',
-      fileName: (format) => `lib.${format}.js`
+      fileName: (format) => `index.${format}.js`
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled
