@@ -13,7 +13,7 @@
       />
     </div>
 
-    <ol
+    <ul
       v-if="hasChildren"
       class="nestable-list"
     >
@@ -41,7 +41,7 @@
           </template>
         </NestableItem>
       </template>
-    </ol>
+    </ul>
   </li>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div :class="['nestable', `nestable-${group}`, rtl ? 'nestable-rtl' : '']">
-    <ol class="nestable-list nestable-group">
+    <ul class="nestable-list nestable-group">
       <!-- No items in list -->
       <Placeholder
         v-if="listIsEmpty"
@@ -34,11 +34,11 @@
           </template>
         </NestableItem>
       </template>
-    </ol>
+    </ul>
 
     <template v-if="dragItem">
       <div class="nestable-drag-layer">
-        <ol
+        <ul
           :style="listStyles"
           class="nestable-list"
         >
@@ -59,7 +59,7 @@
               />
             </template>
           </NestableItem>
-        </ol>
+        </ul>
       </div>
     </template>
   </div>
